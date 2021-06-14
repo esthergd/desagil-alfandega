@@ -1,31 +1,17 @@
 package br.edu.insper.desagil.alfandega;
 
-public class ItemTarifado {
-	private String nome;
-	private double valor;
-	private double rate;
+public class ItemTarifado extends Item{
 	private double tarifa;
 
 	public ItemTarifado(String nome, double valor, double rate, double tarifa) {
-		this.nome = nome;
-		this.valor = valor;
-		this.rate = rate;
+		super(nome, valor, rate);
 		this.tarifa = tarifa;
 	}
-
-	public String getNome() {
-		return this.nome;
-	}
-
-	public double getValor() {
-		return this.valor;
-	}
-
-	public double getRate() {
-		return this.rate;
-	}
-
+	
 	public double getTarifa() {
 		return this.tarifa;
 	}
 }
+// Abstração: como vários dos atributos do ItemTarifado eram os mesmo do Item, fiz com que o Item se transformasse numa
+// superclasse em relação à classe ItemTarifado. Com isso, três dos quatro atributos originalmente presentes na
+// ItemTarifado foram herdados da classe Item.
